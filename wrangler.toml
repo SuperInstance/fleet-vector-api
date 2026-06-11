@@ -1,0 +1,23 @@
+name = "fleet-vector-api"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+account_id = "049ff5e84ecf636b53b162cbb580aae6"
+
+# Workers AI for real embeddings
+[ai]
+binding = "AI"
+
+# Vectorize index for fast similarity search
+[[vectorize]]
+binding = "CRATE_INDEX"
+index_name = "fleet-crates"
+
+# KV for crate metadata cache
+[[kv_namespaces]]
+binding = "META_KV"
+id = "3db4cb084224415cada2c97d84365491"
+
+[vars]
+EMBEDDING_MODEL = "@cf/baai/bge-small-en-v1.5"
+EMBEDDING_DIMS = "384"
+BATCH_SIZE = "50"

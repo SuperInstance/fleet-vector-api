@@ -186,9 +186,12 @@ async function handleSearch(request: Request, env: Env): Promise<Response> {
 
 /** POST /similar — Find similar crates via Vectorize */
 async function handleSimilar(request: Request, env: Env): Promise<Response> {
-  const { crate_name, topK = 10 } = await request.json() as { crate_name: string; topK?: number };
+  const body = await request.json() as Record<string, any>;
+  const crate_name = body.crate_name || body.name || body.id || '';
+  if (!crate_name) return json({ error: 'crate_name, name, or id required' }, 400);
+  const topK = body.topK || 10;
   const metaRaw = await env.META_KV.get(`crate:${crate_name}`);
-  if (!metaRaw) return json({ error: `Not found: ${crate_name}` }, 404);
+  if (!metaRaw) return json({ error: `Crate not found: ${crate_name}. Try /search to find crates by topic.` }, 404);
 
   const meta: CrateMetadata = JSON.parse(metaRaw);
   const queryVector = await embedText(

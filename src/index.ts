@@ -91,8 +91,8 @@ function checkAuth(request: Request, env: Env): boolean {
   return token === env.INGEST_SECRET;
 }
 
-function unauthorized(): Response {
-  return json({ error: 'Unauthorized' }, 401);
+function apiError(code: string, message: string, status: number): Response {
+  return json({ error: { code, message } }, status);
 }
 
 function json(data: unknown, status = 200): Response {
@@ -110,8 +110,8 @@ function json(data: unknown, status = 200): Response {
 async function handleIngest(request: Request, env: Env): Promise<Response> {
   const body = await request.json() as { crates?: CrateInput[] } | CrateInput;
   const crates = Array.isArray(body) ? body : ('crates' in body ? body.crates! : [body]);
-  if (!crates.length) return json({ error: 'No crates' }, 400);
-  if (crates.length > 50) return json({ error: 'Max 50 per request' }, 400);
+  if (!crates.length) return apiError('BAD_REQUEST', 'No crates provided', 400);
+  if (crates.length > 50) return apiError('BAD_REQUEST', 'Max 50 crates per request', 400);
 
   const texts = crates.map(c => buildEmbeddingText(c));
   const vectors = await embedBatch(texts, env.AI, env.EMBEDDING_MODEL);
@@ -165,7 +165,7 @@ async function handleIngest(request: Request, env: Env): Promise<Response> {
 /** POST /search — Semantic search via Vectorize */
 async function handleSearch(request: Request, env: Env): Promise<Response> {
   const { query, topK = 10 } = await request.json() as { query: string; topK?: number };
-  if (!query) return json({ error: 'Query required' }, 400);
+  if (!query) return apiError('BAD_REQUEST', 'Query parameter is required', 400);
 
   const queryVector = await embedText(query, env.AI, env.EMBEDDING_MODEL);
   const results = await env.CRATE_INDEX.query(queryVector, {
@@ -188,10 +188,10 @@ async function handleSearch(request: Request, env: Env): Promise<Response> {
 async function handleSimilar(request: Request, env: Env): Promise<Response> {
   const body = await request.json() as Record<string, any>;
   const crate_name = body.crate_name || body.name || body.id || '';
-  if (!crate_name) return json({ error: 'crate_name, name, or id required' }, 400);
+  if (!crate_name) return apiError('BAD_REQUEST', 'crate_name, name, or id is required', 400);
   const topK = body.topK || 10;
   const metaRaw = await env.META_KV.get(`crate:${crate_name}`);
-  if (!metaRaw) return json({ error: `Crate not found: ${crate_name}. Try /search to find crates by topic.` }, 404);
+  if (!metaRaw) return apiError('NOT_FOUND', `Crate not found: ${crate_name}. Try /search to find crates by topic.`, 404);
 
   const meta: CrateMetadata = JSON.parse(metaRaw);
   const queryVector = await embedText(
@@ -214,7 +214,7 @@ async function handleSimilar(request: Request, env: Env): Promise<Response> {
 /** GET /crates/:name */
 async function handleGetCrate(name: string, env: Env): Promise<Response> {
   const raw = await env.META_KV.get(`crate:${name}`);
-  if (!raw) return json({ error: `Not found: ${name}` }, 404);
+  if (!raw) return apiError('NOT_FOUND', `Crate not found: ${name}`, 404);
   return json(JSON.parse(raw));
 }
 
@@ -254,7 +254,7 @@ async function loadAllCrates(env: Env): Promise<CrateMetadata[]> {
 /** POST /recommend — Context-aware crate recommendations with reasoning */
 async function handleRecommend(request: Request, env: Env): Promise<Response> {
   const { context, topK = 5 } = await request.json() as { context: string; topK?: number };
-  if (!context) return json({ error: 'context required' }, 400);
+  if (!context) return apiError('BAD_REQUEST', 'context parameter is required', 400);
 
   const queryVector = await embedText(context, env.AI, env.EMBEDDING_MODEL);
   const results = await env.CRATE_INDEX.query(queryVector, {
@@ -373,14 +373,14 @@ async function handleGapAnalysis(request: Request, env: Env): Promise<Response> 
   const body = await request.json() as { domain?: string };
   const domain = body.domain;
   const crates = await loadAllCrates(env);
-  if (!crates.length) return json({ error: 'No crates found' }, 404);
+  if (!crates.length) return apiError('NOT_FOUND', 'No crates found in the index', 404);
 
   // Filter to domain if specified
   const targetCrates = domain
     ? crates.filter(c => (c.domain || 'unknown') === domain)
     : crates;
 
-  if (domain && !targetCrates.length) return json({ error: `No crates in domain: ${domain}` }, 404);
+  if (domain && !targetCrates.length) return apiError('NOT_FOUND', `No crates found in domain: ${domain}`, 404);
 
   // Identify gaps
   const gaps = targetCrates
@@ -509,7 +509,7 @@ async function handleDashboard(env: Env): Promise<Response> {
 /** POST /embed — Debug */
 async function handleEmbed(request: Request, env: Env): Promise<Response> {
   const { text } = await request.json() as { text: string };
-  if (!text) return json({ error: 'Text required' }, 400);
+  if (!text) return apiError('BAD_REQUEST', 'Text parameter is required', 400);
   const vector = await embedText(text, env.AI, env.EMBEDDING_MODEL);
   return json({
     text: text.slice(0, 200), model: env.EMBEDDING_MODEL,
@@ -527,9 +527,20 @@ export default {
     const path = url.pathname;
     if (request.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
 
+    // Catch JSON parse errors early for POST routes
+    if (request.method === 'POST') {
+      try {
+        // Pre-read and cache the body so handlers can still call request.json()
+        const cloned = request.clone();
+        await cloned.json(); // just validates parseability
+      } catch {
+        return apiError('BAD_REQUEST', 'Invalid JSON in request body', 400);
+      }
+    }
+
     try {
       if (path === '/ingest' && request.method === 'POST') {
-        if (!checkAuth(request, env)) return unauthorized();
+        if (!checkAuth(request, env)) return apiError('UNAUTHORIZED', 'Missing or invalid Authorization header', 401);
         return await handleIngest(request, env);
       }
       if (path === '/search' && request.method === 'POST')        return await handleSearch(request, env);
@@ -558,10 +569,10 @@ export default {
         { headers: { 'Content-Type': 'text/plain' } },
       );
 
-      return json({ error: 'Not Found' }, 404);
+      return apiError('NOT_FOUND', `Endpoint not found: ${path}`, 404);
     } catch (err: any) {
       console.error(`${path}:`, err.message);
-      return json({ error: err.message }, 500);
+      return apiError('INTERNAL_ERROR', err.message || 'An unexpected error occurred', 500);
     }
   },
 } satisfies ExportedFetchHandler<Env>;

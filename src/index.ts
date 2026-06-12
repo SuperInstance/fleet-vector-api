@@ -13,6 +13,7 @@ interface Env {
   EMBEDDING_MODEL: string;
   EMBEDDING_DIMS: string;
   BATCH_SIZE: string;
+  INGEST_SECRET: string;
 }
 
 interface CrateInput {
@@ -80,6 +81,19 @@ const corsHeaders: Record<string, string> = {
   'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 };
+
+// ─── Auth ─────────────────────────────────────────────────────────────────
+
+function checkAuth(request: Request, env: Env): boolean {
+  const auth = request.headers.get('Authorization') || '';
+  if (!auth.startsWith('Bearer ')) return false;
+  const token = auth.slice(7);
+  return token === env.INGEST_SECRET;
+}
+
+function unauthorized(): Response {
+  return json({ error: 'Unauthorized' }, 401);
+}
 
 function json(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data, null, 2), {
@@ -511,7 +525,10 @@ export default {
     if (request.method === 'OPTIONS') return new Response(null, { headers: corsHeaders });
 
     try {
-      if (path === '/ingest' && request.method === 'POST')        return await handleIngest(request, env);
+      if (path === '/ingest' && request.method === 'POST') {
+        if (!checkAuth(request, env)) return unauthorized();
+        return await handleIngest(request, env);
+      }
       if (path === '/search' && request.method === 'POST')        return await handleSearch(request, env);
       if (path === '/similar' && request.method === 'POST')       return await handleSimilar(request, env);
       if (path === '/recommend' && request.method === 'POST')     return await handleRecommend(request, env);

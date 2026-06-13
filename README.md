@@ -1,138 +1,108 @@
 # fleet-vector-api
 
-**Real semantic search** across the SuperInstance ecosystem using Cloudflare Workers AI embeddings + Vectorize.
+A vector similarity search API for fleet embeddings. Implements brute-force cosine similarity search over in-memory vectors with metadata support. Designed for semantic crate discovery across the SuperInstance fleet — index once, query by meaning rather than keyword.
 
-This isn't fake 32-dim hand-computed vectors. This is `@cf/baai/bge-small-en-v1.5` — a real 384-dimensional embedding model running on Cloudflare's edge network, producing embeddings that actually understand what your crates do.
+## Why It Matters
 
-## Pipeline
+Traditional keyword search fails when queries don't share vocabulary with targets. "Rate limiting middleware" should find "throttle handler" even with zero token overlap. Vector search solves this by projecting text into a continuous embedding space where semantic proximity becomes geometric proximity. This API provides the foundational retrieval primitive: given a query vector, return the K nearest neighbors by cosine similarity.
+
+## How It Works
+
+### Cosine Similarity
+
+The core metric is cosine similarity between two vectors **a** and **b** in ℝᵈ:
 
 ```
-Crate README + Cargo.toml metadata
-        ↓
-Workers AI (bge-small-en-v1.5, 384-dim)
-        ↓
-Vectorize index (cosine similarity)
-        ↓
-Semantic search API at the edge
+sim(a, b) = (a · b) / (‖a‖ · ‖b‖) = Σᵢ aᵢbᵢ / (√(Σᵢ aᵢ²) · √(Σᵢ bᵢ²))
 ```
 
-## Why This Matters
+This measures the angle between vectors, independent of magnitude. Similarity ranges from −1 (opposite) to +1 (identical).
 
-The ecosystem has 548 crates. Finding related work across domains is hard:
-- "What crates use conservation laws?" → finds `conservation-law`, `entropy-lint`, `agent-homeostasis`, `hodge-belief-rs`
-- "sheaf theory" → finds `persistent-sheaf`, `sheaf-cohomology`, `sheaf-agents-c`, `sheaf-coherence`
-- "agent timing" → finds `agent-cadence`, `agent-rubato`, `agent-groove`, `agent-swing`
+### Brute-Force Search
 
-Keyword search misses cross-domain connections. Semantic embeddings catch them.
+For a query vector **q** and index of N vectors, the search computes:
+
+```
+scores = [(id_i, sim(q, v_i)) for i in 1..N]
+top_k  = sort_desc(scores)[:k]
+```
+
+**Time complexity**:
+- Per query: O(N · d) for similarity computation + O(N log N) for sorting = **O(N · d + N log N)**
+- With N = 1,012 crates and d = 384 (BGE-small): ~389K multiply-adds per query
+
+**Space complexity**: O(N · d) for the vector store.
+
+### Why Brute Force Is Correct Here
+
+At N ≈ 1,000 vectors, brute force is faster than approximate nearest neighbor (ANN) indices like HNSW or IVF, which add overhead that only pays off at N > 10,000. The linear scan fits in L2 cache and has no index-build cost.
+
+### Embedding Model
+
+The fleet uses `@cf/baai/bge-small-en-v1.5` (384-dimensional BGE embeddings) via Cloudflare Workers AI. This model produces normalized vectors, so cosine similarity reduces to dot product — but the implementation computes full cosine for safety (handles unnormalized inputs).
+
+## Quick Start
+
+```bash
+# Build
+cargo build --release
+
+# Run demo (indexes 3 sample vectors, queries for nearest 2)
+./target/release/fleet-vector-api
+```
+
+### Deployed Instance
+
+```
+POST https://fleet-vector-api.casey-digennaro.workers.dev/search
+     {"query": "rate limiting", "topK": 5}
+
+POST https://fleet-vector-api.casey-digennaro.workers.dev/ingest
+     (bulk upsert crates)
+
+GET  https://fleet-vector-api.casey-digennaro.workers.dev/stats
+```
 
 ## API
 
-### Ingest
+### Data Structures
 
-```bash
-curl -X POST http://localhost:8787/ingest \
-  -H "Content-Type: application/json" \
-  -d '{
-    "crates": [{
-      "name": "conservation-law",
-      "description": "Core invariant for constraint-aware AI systems",
-      "readme": "# Conservation Law\n\nImplements γ + η = C...",
-      "version": "0.2.1",
-      "keywords": ["conservation", "invariant", "ternary"]
-    }]
-  }'
+```rust
+struct Vector {
+    id: String,
+    data: Vec<f32>,              // 384-dim for BGE-small
+    metadata: Option<Value>,     // arbitrary JSON
+}
+
+struct SearchResult {
+    id: String,
+    score: f32,                  // cosine similarity ∈ [-1, 1]
+}
 ```
 
-### Search
+### VectorIndex Methods
 
-```bash
-curl -X POST http://localhost:8787/search \
-  -H "Content-Type: application/json" \
-  -d '{" query": "agent coordination with conservation laws", "topK": 5 }'
-```
+| Method | Signature | Complexity |
+|--------|-----------|------------|
+| `new(d)` | `→ VectorIndex` | O(1) |
+| `insert(v)` | `&mut self` | O(1) amortized |
+| `search(q, k)` | `&self → Vec<SearchResult>` | O(Nd + N log N) |
 
-### Find Similar
+## Architecture Notes
 
-```bash
-curl -X POST http://localhost:8787/similar \
-  -H "Content-Type: application/json" \
-  -d '{"crate_name": "conservation-law", "topK": 10}'
-```
+fleet-vector-api is the **semantic memory (γ)** that enables the fleet to recall relevant crates by meaning rather than string matching. The crate registry is the **knowledge base (η)**. The retrieval quality (C) depends on embedding quality: BGE-small captures semantic similarity well enough that the γ + η = C composition produces high-precision search results. The brute-force approach is a deliberate engineering choice — at this scale, simplicity wins over index complexity.
 
-### Debug Embed
+### Scaling Path
 
-```bash
-curl -X POST http://localhost:8787/embed \
-  -H "Content-Type: application/json" \
-  -d '{"text": "ternary mathematics for agent systems"}'
-# Returns: 384-dim vector, magnitude, preview
-```
+When N exceeds ~10K, swap the brute-force `Vec<Vector>` for an HNSW index (e.g., `hnsw_rs` or `usearch`). The API surface stays identical; only the internal `search` method changes from O(Nd) to O(log N · d).
 
-## Endpoints
+## References
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `POST` | `/ingest` | Ingest crate(s): README → Workers AI → Vectorize |
-| `POST` | `/search` | Semantic search across all crates |
-| `POST` | `/similar` | Find crates similar to a given crate |
-| `GET` | `/crates/:name` | Get crate metadata + README preview |
-| `GET` | `/stats` | Index statistics |
-| `POST` | `/embed` | Debug: embed arbitrary text |
-| `GET` | `/health` | Health check |
-
-## Batch Ingestion
-
-```bash
-# Ingest all crates from local filesystem
-npm run ingest -- --api http://localhost:8787 --repos /home/phoenix/repos
-
-# Dry run first
-npm run ingest -- --dry-run
-
-# Limit to first 10 for testing
-npm run ingest -- --limit=10
-```
-
-## Architecture Decisions
-
-### Why bge-small-en-v1.5 (384-dim) not bge-m3 (1024-dim)?
-- **Latency**: 384-dim embeddings are ~3x faster to generate at the edge
-- **Cost**: Fewer dimensions = cheaper Vectorize storage
-- **Accuracy**: For crate descriptions (technical English), 384-dim is sufficient
-- **Upgrade path**: Swap to `@cf/baai/bge-m3` in wrangler.toml when needed
-
-### Why CLS pooling?
-Cloudflare recommends `pooling: 'cls'` for bge models — uses the [CLS] token representation which captures full-sequence semantics better than mean pooling.
-
-### Why normalize to unit vectors?
-Cosine similarity is the standard for semantic search. Unit vectors make dot product = cosine similarity, which is what Vectorize uses internally.
-
-## Storage
-
-| Store | Purpose | Retention |
-|-------|---------|-----------|
-| **Vectorize** | 384-dim embeddings + metadata | Permanent |
-| **KV** | Full crate metadata JSON | 30 days (refresh on ingest) |
-| **R2** | Raw README.md files | Permanent |
-
-## Local Development
-
-```bash
-npm install
-npm run dev     # Starts wrangler dev on :8787
-npm test        # Run unit tests
-```
-
-## Deployment
-
-```bash
-# Create Vectorize index first
-wrangler vectorize create fleet-crates --dimensions=384 --metric=cosine
-
-# Deploy
-npm run deploy
-```
+- **Cosine similarity in IR**: Manning, C., Raghavan, P., Schütze, H. *Introduction to Information Retrieval.* Cambridge UP, 2008. Chapter 6.
+- **BGE embeddings**: Xiao, S., et al. "C-Pack: Packaged Resources To Advance General Chinese Embedding." *SIGIR*, 2024.
+- **ANN benchmarks**: Bernhardsson, E. "Ann-benchmarks: A benchmarking tool for approximate nearest neighbor search." *SISAP*, 2018.
+- **Vector search at scale**: Johnson, J., Douze, M., Jégou, H. "Billion-scale similarity search with GPUs." *IEEE Transactions on Big Data*, 2021.
 
 ## License
 
-MIT OR Apache-2.0
+MIT

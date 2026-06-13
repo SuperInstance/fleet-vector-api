@@ -1,0 +1,7879 @@
+{
+  "generated_at": "2026-06-13T00:15:00.010Z",
+  "statistics": {
+    "total": 1541,
+    "changed": 734,
+    "unchanged": 807,
+    "moved_from_unknown": 504,
+    "new_distribution": {
+      "physics": 39,
+      "mathematics": 242,
+      "conservation-math": 7,
+      "networking": 79,
+      "gpu-compute": 12,
+      "machine-learning": 36,
+      "agent-cognition": 64,
+      "security": 20,
+      "build-infra": 69,
+      "fleet-ops": 40,
+      "ternary-compute": 351,
+      "unknown": 313,
+      "game-engine": 30,
+      "hardware-io": 6,
+      "cryptography": 26,
+      "ui-terminal": 42,
+      "data-processing": 75,
+      "testing": 44,
+      "temporal": 29,
+      "music-audio": 12,
+      "rust-ecosystem": 5
+    },
+    "old_distribution": {
+      "conservation-math": 30,
+      "agent-cognition": 58,
+      "fleet-ops": 31,
+      "ternary-compute": 354,
+      "unknown": 748,
+      "testing": 26,
+      "build-infra": 25,
+      "machine-learning": 8,
+      "gpu-compute": 37,
+      "networking": 21,
+      "mathematics": 85,
+      "music-audio": 11,
+      "game-engine": 7,
+      "ui-terminal": 17,
+      "cryptography": 16,
+      "temporal": 9,
+      "security": 10,
+      "data-processing": 19,
+      "physics": 4,
+      "build_pattern": 15,
+      "quality_pattern": 1,
+      "metric": 2,
+      "publish_pattern": 1,
+      "harness_pattern": 3,
+      "development_pattern": 1,
+      "productivity_pattern": 1,
+      "infrastructure_pattern": 1
+    },
+    "domain_changes": {
+      "conservation-math → physics": 6,
+      "conservation-math → mathematics": 15,
+      "conservation-math → networking": 1,
+      "conservation-math → gpu-compute": 1,
+      "conservation-math → machine-learning": 1,
+      "agent-cognition → gpu-compute": 1,
+      "agent-cognition → security": 1,
+      "agent-cognition → mathematics": 3,
+      "agent-cognition → physics": 1,
+      "agent-cognition → build-infra": 1,
+      "fleet-ops → agent-cognition": 1,
+      "fleet-ops → gpu-compute": 1,
+      "fleet-ops → networking": 1,
+      "fleet-ops → physics": 1,
+      "fleet-ops → mathematics": 1,
+      "ternary-compute → fleet-ops": 2,
+      "ternary-compute → mathematics": 1,
+      "unknown → machine-learning": 11,
+      "unknown → agent-cognition": 11,
+      "unknown → networking": 54,
+      "unknown → game-engine": 23,
+      "unknown → hardware-io": 5,
+      "unknown → cryptography": 20,
+      "unknown → mathematics": 179,
+      "unknown → gpu-compute": 2,
+      "unknown → ui-terminal": 24,
+      "unknown → data-processing": 44,
+      "unknown → build-infra": 56,
+      "unknown → security": 13,
+      "unknown → testing": 12,
+      "unknown → physics": 19,
+      "unknown → temporal": 18,
+      "unknown → music-audio": 3,
+      "unknown → rust-ecosystem": 5,
+      "unknown → fleet-ops": 5,
+      "testing → networking": 1,
+      "build-infra → unknown": 9,
+      "build-infra → testing": 2,
+      "build-infra → data-processing": 1,
+      "build-infra → networking": 1,
+      "build-infra → mathematics": 3,
+      "build-infra → physics": 1,
+      "machine-learning → unknown": 2,
+      "gpu-compute → unknown": 13,
+      "gpu-compute → testing": 1,
+      "gpu-compute → agent-cognition": 1,
+      "gpu-compute → build-infra": 1,
+      "gpu-compute → conservation-math": 1,
+      "gpu-compute → fleet-ops": 3,
+      "gpu-compute → data-processing": 2,
+      "gpu-compute → physics": 3,
+      "gpu-compute → machine-learning": 2,
+      "gpu-compute → networking": 2,
+      "gpu-compute → mathematics": 1,
+      "gpu-compute → music-audio": 1,
+      "networking → ui-terminal": 1,
+      "networking → fleet-ops": 2,
+      "networking → physics": 2,
+      "networking → mathematics": 2,
+      "networking → data-processing": 1,
+      "networking → build-infra": 1,
+      "mathematics → machine-learning": 16,
+      "mathematics → data-processing": 13,
+      "mathematics → unknown": 23,
+      "mathematics → networking": 3,
+      "mathematics → physics": 2,
+      "mathematics → hardware-io": 1,
+      "mathematics → gpu-compute": 1,
+      "mathematics → music-audio": 1,
+      "mathematics → temporal": 1,
+      "music-audio → unknown": 5,
+      "game-engine → fleet-ops": 2,
+      "game-engine → unknown": 1,
+      "game-engine → mathematics": 1,
+      "game-engine → temporal": 1,
+      "ui-terminal → game-engine": 2,
+      "ui-terminal → networking": 1,
+      "ui-terminal → build-infra": 2,
+      "cryptography → mathematics": 7,
+      "cryptography → physics": 3,
+      "cryptography → networking": 1,
+      "cryptography → music-audio": 1,
+      "temporal → unknown": 1,
+      "temporal → ui-terminal": 1,
+      "security → unknown": 3,
+      "security → data-processing": 2,
+      "data-processing → cryptography": 2,
+      "data-processing → unknown": 2,
+      "data-processing → ui-terminal": 1,
+      "data-processing → networking": 1,
+      "data-processing → temporal": 1,
+      "physics → game-engine": 2,
+      "physics → unknown": 1,
+      "physics → mathematics": 1,
+      "build_pattern → mathematics": 2,
+      "build_pattern → testing": 1,
+      "build_pattern → temporal": 1,
+      "build_pattern → unknown": 7,
+      "build_pattern → ui-terminal": 2,
+      "build_pattern → networking": 1,
+      "build_pattern → physics": 1,
+      "quality_pattern → unknown": 1,
+      "metric → game-engine": 1,
+      "metric → unknown": 1,
+      "publish_pattern → security": 1,
+      "harness_pattern → testing": 3,
+      "development_pattern → mathematics": 1,
+      "productivity_pattern → ui-terminal": 1,
+      "infrastructure_pattern → mathematics": 1
+    }
+  },
+  "classifications": [
+    {
+      "name": "anti-entropy",
+      "old_domain": "conservation-math",
+      "new_domain": "physics"
+    },
+    {
+      "name": "cech-cohomology",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cohomology-ring",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "conservation-compiler",
+      "old_domain": "conservation-math",
+      "new_domain": "conservation-math"
+    },
+    {
+      "name": "conservation-law",
+      "old_domain": "conservation-math",
+      "new_domain": "conservation-math"
+    },
+    {
+      "name": "conservation-lint",
+      "old_domain": "conservation-math",
+      "new_domain": "conservation-math"
+    },
+    {
+      "name": "conservation-matrix",
+      "old_domain": "conservation-math",
+      "new_domain": "conservation-math"
+    },
+    {
+      "name": "conservation-spectral-topology",
+      "old_domain": "conservation-math",
+      "new_domain": "conservation-math"
+    },
+    {
+      "name": "conservation-verify",
+      "old_domain": "conservation-math",
+      "new_domain": "conservation-math"
+    },
+    {
+      "name": "de-rham-cohomology",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "edge-conservation",
+      "old_domain": "conservation-math",
+      "new_domain": "networking"
+    },
+    {
+      "name": "energy-budget",
+      "old_domain": "conservation-math",
+      "new_domain": "physics"
+    },
+    {
+      "name": "entropy-conservation",
+      "old_domain": "conservation-math",
+      "new_domain": "physics"
+    },
+    {
+      "name": "entropy-flow-rs",
+      "old_domain": "conservation-math",
+      "new_domain": "physics"
+    },
+    {
+      "name": "entropy-gpu",
+      "old_domain": "conservation-math",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "entropy-gradient",
+      "old_domain": "conservation-math",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "entropy-lint",
+      "old_domain": "conservation-math",
+      "new_domain": "physics"
+    },
+    {
+      "name": "fold-entropy",
+      "old_domain": "conservation-math",
+      "new_domain": "physics"
+    },
+    {
+      "name": "hodge-belief-rs",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hodge-consensus",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hodge_theory",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "l2_cohomology",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "laplacian-gossip",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "laplacian-operator",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "renormalization-group",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sheaf-coherence",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sheaf-cohomology",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sheaf-gossip",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "symplectic-fleet",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "symplectic-map",
+      "old_domain": "conservation-math",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "agent-anacrusis",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-audience",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-cadence-progress",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-call-response",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-choir",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-contrapuntal",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-counterpoint",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-dream-cycle",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-ensemble",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-fermata",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-groove",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-harmonic-field",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-homeostasis",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-intonation",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-jam",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-knowledge",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-memory",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-metamorphosis",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-microtone",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-motif",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-orchestration",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-overtone",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-phase-change",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-phrasing",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-polyrhythm",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-resonance",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-riff",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-riff-v2",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-riff-v3",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-riff-v4",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-rubato",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-self-rivalry",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-semiosis",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-speciation",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-staccato-legato",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-swing",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-sync",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-ternary-gate",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-transcription",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-venue",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "agent-voice-leading",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "git-cuda-agent",
+      "old_domain": "agent-cognition",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "identity-vault",
+      "old_domain": "agent-cognition",
+      "new_domain": "security"
+    },
+    {
+      "name": "lau-memory-arena",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "lotka-volterra-agents",
+      "old_domain": "agent-cognition",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "memory-mapper",
+      "old_domain": "agent-cognition",
+      "new_domain": "physics"
+    },
+    {
+      "name": "meta-agent",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "node-agent",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "open-mind-capability-discovery",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "openmind-conductor",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "openmind-esp32-bridge",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "openmind-mirror",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "persistence-agent",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "persona-engine",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "spectral-graph-agent",
+      "old_domain": "agent-cognition",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "superinstance-starter-agent",
+      "old_domain": "agent-cognition",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "topological-sort-agent",
+      "old_domain": "agent-cognition",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "virtual-memory",
+      "old_domain": "agent-cognition",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "actor-dispatcher",
+      "old_domain": "fleet-ops",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "async-gpu-dispatch",
+      "old_domain": "fleet-ops",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "construct",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "construct-coordination",
+      "old_domain": "fleet-ops",
+      "new_domain": "networking"
+    },
+    {
+      "name": "construct-core",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "construct-hotswap",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "construct-provenance",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "construct-supply-chain",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fanout-dispatcher",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-auth",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-bridge",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-budget",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-build",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-conductor",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-config",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-coordinator",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-dedup",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-edge-worker",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-event-router",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-health",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-mapper",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-midi",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-scanner",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-vector-api",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "fleet-warden",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "flux-vm-dispatch",
+      "old_domain": "fleet-ops",
+      "new_domain": "physics"
+    },
+    {
+      "name": "jetsonclaw1-vessel",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "plato-fleet-manager",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "spectral-fleet",
+      "old_domain": "fleet-ops",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "ssa-constructor",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "vessel-constellation",
+      "old_domain": "fleet-ops",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "drone-fleet-ternary",
+      "old_domain": "ternary-compute",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "evolution-ternary",
+      "old_domain": "ternary-compute",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "federated-ternary",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "plato-ternary-bridge",
+      "old_domain": "ternary-compute",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "ternary-accumulator",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-activation",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-active-inference",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-adversarial",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-agent",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-anchor",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-antidote",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-archive",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-arena",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-arithmetic",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-attention",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-auction",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-auto-vectorizer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-automata",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-backpressure",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-baum-welch",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-bayesian",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-beacon",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-belief",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-benchmark",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-bite",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-blockchain",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-bloom-filter",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-bridge",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-btree",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-budget",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-bus",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cache",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cadence",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-captain",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cargo",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cartograph",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-causality",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cell",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cell-rs",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-channel",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-chaos",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-checkpoint",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-chemistry",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-chronicle",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cipher",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-circuit",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-classifier",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cli",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-clustering",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-codes",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-collatz",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-color",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-command",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-command-buffer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-compass",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-compiler",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-compiler-optimizer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-compiler-v2",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-complexity",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-compress",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-compression",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-compression-v2",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-conduct",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-consensus",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-constant-cache",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-constellation",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-constraint",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-control",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-conv",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cookbook",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-coordination",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-core",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cortex",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-counterpoint",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-critical",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-crossfader",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-crystal",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cuda-kernels",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-cuda-kernels-v2",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-current",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-curriculum",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-database",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-depth",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-dice",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-diehard",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-diff",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-dispatch",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-distill",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-distributed",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-dockyard",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-drift",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-dropout",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-dynamics",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ear",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ear-training",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-echo",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ecology",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-econ",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ecosystem",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-electromagnetism",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-em",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-energy",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-engine",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ensemble",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ensign",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-entropy",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-envelope",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-epidemic",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-epoch",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-event",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-event-pool",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-evolution-advanced",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-experiment",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-explain",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-failure",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-fault-tree",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-federated",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-fence",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-fib",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-field",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-fire",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-fitness",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-flux",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-form",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-foundry",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-free-energy",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-frontier",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-fuse",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-fuzzy",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ga",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-game-of-life",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-game-theory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-games",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-gate",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-gauge",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-gauge-theory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-gc",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-genetic",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-genome",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-geometry",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-grace",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-grad",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-gradient",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-gradient-queue",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-grain",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-grammar",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-graph",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-grid-launch",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-haar",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-hamiltonian",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-harbor",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-hardware",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-harmonic",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-hash",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-heap",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-helm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-hmm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-homology",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-inference",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-inference-sim",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-intent-cache",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-interpreter",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-inventory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-irradiate",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ising",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-jam",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-kalman",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-kernel-launch",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-knn",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-knot",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-kuramoto",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-language",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-language-evolution",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-language-model",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-lattice",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-lattice-gc",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-lease",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-life",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-lighthouse",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-llm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-locks",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-logic",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-logistic",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-loop",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-loss",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-market",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-markov",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-matmul",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-matrix",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-membrane",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-memory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-memory-pool",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-mesh",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-metrics",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-minority",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-mirror",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-mixer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-morph",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-morphogenesis",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-motion",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-mud",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-muse",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-music",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-mutual-info",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-navigator",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-needledrop",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-negotiate",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-network",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-noether",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-noise",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-norm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-observatory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-optimizer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-oracle",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pack",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pagerank",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pan",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pareto",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-paxos",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pca",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-percolate",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-percolation",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-permutation",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-petri",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-phase",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pheromone-market",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pid",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pilgrim",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pipeline",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pipeline-parallel",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-planning",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-platoon",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-polyrhythm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-pool",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-popgen",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-predict",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-priority-queue",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-projection",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-proof",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-prophet",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-protocol",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-prune",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-quantize",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-quantum",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-quorum",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-rack",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-rate-limiter",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-reassembly",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-reef",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-regex",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-register-file",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-registry",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-registry-v2",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-regression",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-renormalization",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-replay",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-reservoir",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-resilience",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-resonance",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-retry",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-rhythm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-rigging",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ring",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-ring-buffer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-rl",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-robotics",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-room",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-route",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-routing",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-runlength",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sampler",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sandbox",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sandpile",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-scheduler",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-scheduling",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-scheduling-v2",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-science",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-scoring",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-search",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-search-index",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-secret-share",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-seed",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-semaphore",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sensor",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-shard",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-shard-merge",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-shard-split",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-shared-memory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sheaf",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-shield",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-shipyard",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-signal-flow",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-signaling",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-signals",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sketch",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-som",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sort",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-speculate",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-spiral",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-spreadsheet",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-steganography",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-steward",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-story",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-stream-queue",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-streaming",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-surface-memory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-svm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-swarm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-symbiont",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-symmetry",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-sync",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-temperament",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tempo",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tenforward",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tensor",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tensor-parallel",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-texture-memory",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-thermodynamics",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-thermostat",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-thread-block",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tidelight",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tidepool",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-timbre",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tnn",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-topology",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-transfer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-transform",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-transformer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-trees",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-trust",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-tuple",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-turing",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-types",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-validation",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-version",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-visualization",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-visualizer",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-viterbi",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-vortex",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-voting",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-voyage",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-vu",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-walk",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-walsh",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-warp",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-warp-block",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-wasm",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-watermark",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-wave",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-weather",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-world",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-zigzag",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "ternary-zkp",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "warp-ternary-vote",
+      "old_domain": "ternary-compute",
+      "new_domain": "ternary-compute"
+    },
+    {
+      "name": "abac-engine",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "ackermann_function",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "activation-fn",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "actor-context",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "actor-mailbox",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "actor-pool",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "actor-ref",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "actor-router",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "actor-supervisor",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "actor-system",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "adc-sensor",
+      "old_domain": "unknown",
+      "new_domain": "hardware-io"
+    },
+    {
+      "name": "aes-gcm-stream",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "ai-pasture",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "albanese-variety",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "alexander-duality",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "alias-analysis",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "amd-bf16-tools",
+      "old_domain": "unknown",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "anomaly-detect",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "anova-table",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "api-gateway",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "arc-cache",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "archive-writer",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "arena-alloc",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "argon2-kdf",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "ast-diff",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "ast-visitor",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "astar-pathfinding",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "atiyah-singer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "audit-log",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "audit_trail",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "auto-changelog",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "avl-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "avoidance-cascade",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "avro-schema",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "b-plus-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "b-tree-segment",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "backgammon-roll",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "backpressure-regulator",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "baggage-propagator",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "banach-space",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "barrier-sync",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "base58-check",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "bellman-ford",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "berry-phase",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "betti-number",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "bezier-curve",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "bigint-native",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "binary-indexed-tree",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "bip32-derived",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "blake2-tree",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "blame-tracker",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "bloom-filter",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "bloom-filter-extended",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "bloom-filter-scalable",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "borel-sigma-carleman-equation",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "borsuk-ulam",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "bpf-jit",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "bpf-map",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "bpf-program",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "bpf-verifier",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "bpf-vm",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "bplus-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "branch-prediction",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "brownian-motion",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "bsp-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "buddy-allocator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "buffer-pool",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "bulkhead-pattern",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "bump-alloc",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "byte_queue",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "byte_ring",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "byzantine-failure",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "cache-adaptive",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "cache-hierarchy",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cache-lru",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cache-memcached",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cache-moka",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cache-redis",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cache-ttl",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "cairo-renderer",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "canary-release",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "canny-edge",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "canonical-form",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "canonical-repr",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "capnp-schema",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "catalan-number",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "categorical-quantum",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cats-theorem",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cauchy-distribution",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cbor_stream",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "cell-automaton",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cellular-automata",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cellular-homology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cfg_analyzer",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "cgroup-monitor",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "chacha-stream",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "chain-complex",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "change-point",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "channel-broadcast",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "channel-harmonics",
+      "old_domain": "unknown",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "channel-mpmc",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "channel-mpsc",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "channel-watch",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "character-arc",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "character-class",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "character-encounter",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "character-sheet",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "characteristic_class",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "chebyshev-approx",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "chern-class",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "chernoff-bound",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "chess-engine",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "cobordism",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cochain-complex",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "color-space",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "columnar-store",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "command-buffer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "compliance_check",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "composite-metric",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "config-center",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "config-env",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "config-layer",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "config-layered",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "config-toml",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "config-watch",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "config-yaml",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "conflict-detector",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "congestion-controller",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "constant-fold",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "container-runtime",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "convex-hull-graham",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "conway-life",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cookie-jar",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "cors-middleware",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "cosmic-web",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "count-min-sketch",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "coverage-gap",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "cqrs-framework",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "crate-graph",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "crates-publish-check",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "crdt-gcounter",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "crdt-gset",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "crdt-lwwreg",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "crdt-orset",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "crdt-pncounter",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "credential-store",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "cribbage-scoring",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cuckoo-filter",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "cup_product",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "dag-runner",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "darwin-fitness",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "dashboard-render",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "dead-letter-queue",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "debug-dwarf",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "degree-map",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "dehn-surgery",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "delaunay-triangulation",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "dendrite-growth",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "deno",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "deno_runtime",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "dep-audit",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "deployment-rollback",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "dh-group14",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "dial-ecology",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "dial-theory",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "dialog-tree",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "diff-merge",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "diff-myers",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "diff-patch",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "diff-patience",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "diff-three-way",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "differential-form",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "diffusion-coupling",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "dirac-operator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "dirichlet-process",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "disjoint-set",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "dissertation-engine",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "dns-cache",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "dns-record",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "dns-server",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "dns-zone",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "doc-generator",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "doc-indexer",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "doc-renderer",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "doc-search",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "document-store",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "dom-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "dunce-hat",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "ecdsa-p256",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "ecs-component",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "ecs-query",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "ecs-resource",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "ecs-system",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "ecs-world",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "ed25519-bip44",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "ed25519-dalek",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "edge-detect",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "edge-detector",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "eigen-face",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "eigen-trace",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "eilenberg-maclane",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "elliptic-curve-weierstrass",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "epoll-wrapper",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "equipment-celllogic-distiller",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "equipment-nlp-explainer",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "error-forest",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "error-forest-hub",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "escape-analysis",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "event-bus",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "evolving-boundary",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "exact_sequence",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "examples",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "exception-handler",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "exotic-sphere",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "expanding-search",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "expr-eval",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "expr-typecheck",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "factor-analysis",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "falcon-7b-tools",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "fallback-strategy",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "fastloop-guard",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "feature-flag",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "feigenbaum-constant",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "fenwick_tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "fft-convolution",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "fiber_bundle",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "fibration-timing",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "field-theory",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "fisher-information",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "flame-graph-analyzer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "flatbuf-gen",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "flatbuffers",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "floer_homology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "flux-autoscale",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "flux-core",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "flux-importer",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "flux-quantum",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "font-rasterizer",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "formal-verify",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "fragment-reassembler",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "frame-alloc",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "fredholm-equation",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "free-list",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "frobenius-norm",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "fundamental-group",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "futures-unordered",
+      "old_domain": "unknown",
+      "new_domain": "rust-ecosystem"
+    },
+    {
+      "name": "galerkin_method",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gamma-math",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gauge_group",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "gauss-markov",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "gauss_legendre",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "gaussian-blur",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "ghost-track",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gibbs-phenomenon",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "git-graph",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "git-pipeline",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "go-gtp",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gossip-member",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "gossip-ping",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "gossip-seed",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "gpio-pin",
+      "old_domain": "unknown",
+      "new_domain": "hardware-io"
+    },
+    {
+      "name": "graph-astar",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "graph-bellman-ford",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "graph-bfs",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "graph-coloring",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "graph-dfs",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "graph-dijkstra",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "graphql-engine",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "graphql-exec",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "graphql-schema",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "graphql-validator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "grassmannian",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "green_function",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gromov_witten",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gzip-stream",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "h3-index",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "h3-server",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hal-session",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hamming-weight",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "handle-decomposition",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hausdorff_dimension",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "health-check",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "heap-region",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "heap_buffer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "heat-equation",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hermite-polynomial",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "heterarchical-graph",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hex-board",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hkdf-expand",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hmac-digest",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "holomorphic-kernel",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "homotopy-group",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hook-manager",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hopf-invariant",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "huge-page",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hungarian-algorithm",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hurewicz-homomorphism",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hurewicz-theorem",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hyper-loglog",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "hyper-loglog-pp",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "hyperloglog",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "i2c-bus",
+      "old_domain": "unknown",
+      "new_domain": "hardware-io"
+    },
+    {
+      "name": "iavl-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "image-resize",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "impulse-response",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "index-buffer",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "inline-expander",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "interceptor-stack",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "intersection-form",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "interval-tree",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "invariant-measure",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "iovec-buffer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "isoperimetric_inequality",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "jacobian-system",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "jarke-barrantes",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "jensen-inequality",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "k-theory",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kalman-filter",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "karatsuba",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kd-tree-nearest",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "keccak-sponge",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "key-exchange",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "key-value-store",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "knot_invariant",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kolmogorov-equation",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kolmogorov_complexity",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kqueue-wrapper",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "kunneth-formula",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "kv-journal",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kv-memtable",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "kv-redb",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kv-rocksdb",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "kv-sled",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lagrange-interpolation",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "laminar-socket",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "lapce",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lapce-app",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lapce-core",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lapce-proxy",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "laplace-transform",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "lavaan-sem",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "leader-election",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "learning-rate",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "lebesgue-integral",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "ledger-journal",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "lefschetz-fixed",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "legendre-polynomial",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lever-runner-carapace",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lever-runner-wasm",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "lexer-gen",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lfu-cache",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "license-compliance",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "lie-bracket",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lindenmayer-system",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "line-breaker",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "linker-loader",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "linking-number",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "liveness_check",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "llvm-irgen",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "llvm-pass",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "llvm-target",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "load-balancer",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "log-aggregator",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "log-collector",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "log-detector",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "loop-invariant",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "loot-table",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "lorenz_attractor",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "loss-function",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "lru-cache-atomic",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "lru-segmented",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "lyapunov-exponent",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "mahalanobis",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "mandelbrot-set",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "manifold-atlas",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "manifold-map",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mapping-class",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "markov-chain",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "markov-inequality",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "markov-predictor",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "mayer-vietoris",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "maze-gen",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "mcts-search",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "measure-theory",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "mempool-arena",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mempool-buddy",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mempool-object",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mempool-simulator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mempool-slab",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mempool-thread-local",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "merkle-proof",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "merkle-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mesh-simplification",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "mesh-topology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "message-bus",
+      "old_domain": "unknown",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "metal-driver",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "metric-recorder",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "middleware-chain",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "min-cut-max-flow",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "minkowski-metric",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "mmap-wrapper",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "moduli-space",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "monte-carlo",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "morph-kernel",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "morse-theory",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "msgpack_value",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "multi-scale-graph",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "mutex-fair",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "mycelium",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "namespace-isolate",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "navier-stokes",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "negative-space-core",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "nerve-theorem",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "netlink-socket",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "neumann-boundary",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "neuron-layer",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "noether-theorem",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "noise-channel",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "noise-fbm",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "noise-perlin",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "noise-simplex",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "noise-voronoi",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "noise-worley",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "normal-bundle",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "npc-behavior",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "numa-topology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "nvml-sys",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "object-pool",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "octree-spatial",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "opencl-driver",
+      "old_domain": "unknown",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "openid-connect",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "opentelemetry-trace",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "oracle2",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "orbital-mechanics",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "orchestration-engine",
+      "old_domain": "unknown",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "orientable-surface",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "orthonormal-basis",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "outbox-pattern",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "outlier-score",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "packet-capture",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "packet-sequencer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "page-allocator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "page-fault",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "page-table",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "pairing-heap",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "parity-check",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "parquet-schema",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "partition-function",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "patch-generator",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "pathfinding-grid",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pbkdf2-derive",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pca-reducer",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "peak-detector",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "peephole-opt",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "periodic-boundary",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "persistence-homology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "phase-lock",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "phase-portrait",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "phi-detect",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pincher-core",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pixel-composite",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pixel-raster",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pixel-transform",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "plato-dashboard",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "plato-demo",
+      "old_domain": "unknown",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "plato-engine-block",
+      "old_domain": "unknown",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "plato-quickstart",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "plato-runtime-kernel",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "plugin-host",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "plugin-loader",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "plugin-native",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "plugin-registry",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "plugin-wasm",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "poincare_map",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "poison-message",
+      "old_domain": "unknown",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "poison-pill",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "poisson-process",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "poker-hand",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "polln",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "polynomial-root",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pontryagin-class",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "population-scaling",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "position-aware-embed",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "potential-field",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "prefetcher",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "priority-inbox",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "probability-flow",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "procfs-scanner",
+      "old_domain": "unknown",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "prometheus-exporter",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "prophet-oracle",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "protobuf-gen",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "protobuf_lite",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "quadtree-index",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "quadtree-spatial",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "quantile-approx",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "quasicrystal",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "queue-kafka",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "queue-nats",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "queue-rabbitmq",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "queue-redis-stream",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "queue-sqs",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "quic-congestion",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "quic-loss-recovery",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "quic-qpack",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "quic-tls",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "quic-transport",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "quinn-server",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "quorum-reader",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "quota_manager",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "r-tree-spatial",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "radial-basis",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "raft-cluster",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "raft-config",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "raft-consensus",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "raft-fsm",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "raft-log",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "raft-snapshot",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "random-field",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "rate_limiter_fixed",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "rate_limiter_sliding",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "rational-exact",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rayleigh-quotient",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rbac-engine",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "reaction-diffusion",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "readme-generator",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "red-black-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "reed-solomon",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "regex-dfa",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "regex-engine",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "regex-nfa",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "region-based",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "register-allocator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "register-vm",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "regression-linear",
+      "old_domain": "unknown",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "relative_homology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "reliable-udp",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "relocation-table",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "reservoir-sample",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "reservoir-sampler",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "resilience-bus",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "retry-backoff",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "retry-policy",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "reverse-proxy",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "riemann-surface",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "riemann_zeta",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rigid-body",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "ring-buffer-atomic",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "ring-io",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "ring_buffer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "rlimit-set",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "roaring-bitset",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "rope",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rope-string",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "round-b",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "row-store",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rsa-pkcs1",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rtree-index",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "runbook_engine",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "runge-kutta",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rw-lock-tick",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "saddle-point",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "saga-coordinator",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "saga-orchestrator",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "sample-wasm",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "sampling-theory",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "scalar-field",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "scatter-gather",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "schrodinger-sim",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "schwarz-inequality",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "scrypt-kdf",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "seccomp-filter",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "secret_vault",
+      "old_domain": "unknown",
+      "new_domain": "security"
+    },
+    {
+      "name": "segment-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "segment-tree-range",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "seifert_surface",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "self-organizing-map",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "semaphore-count",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "service-discovery",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "service-mesh",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "session-miner",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "session-store",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "sha3-ext",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "shamir-secret",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "shell-history-analyzer",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "simplex-method",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "skip-list-concurrent",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "skip_list",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "slab-alloc",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "slab-allocator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "slab-arena",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "slab_buffer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "slip0010",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "slot-allocator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sobel-filter",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sobolev-space",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "sort-heap",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sort-merge",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sort-quick",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sort-radix",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "sort-tim",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "span-exporter",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "span-tracer",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "sparse-merkle",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "spawn-supervisor",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "spectral-decomposition",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "spectral-prosody",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "spectral-sequence",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "spectral_theory",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "spi-device",
+      "old_domain": "unknown",
+      "new_domain": "hardware-io"
+    },
+    {
+      "name": "spinlock-rwlock",
+      "old_domain": "unknown",
+      "new_domain": "hardware-io"
+    },
+    {
+      "name": "splay-tree",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "spreadsheet-ai",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "spreadsheet-formulas",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "spreadsheet-moment",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "stable-marriage",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "stable_homotopy",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "stack-vm",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "state-machine",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "stiefel-whitney",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "stochastic_process",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "stokes-equation",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "strassen-multiply",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "strategy-ecology",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "strategy-transfer",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "strength-reduction",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "suffix-array",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "superinstance-core",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "superinstance-embedder",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "superinstance-foundry",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "superinstance-papers",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "superinstance-runtime",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "supervisor-strategy",
+      "old_domain": "unknown",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "svg-path",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "svg-renderer",
+      "old_domain": "unknown",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "symbol-table",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "symbol-table-elf",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "tail-call-opt",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tangent_bundle",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "tar-reader",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "task-queue",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "taylor-series",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tcp-listener",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "tdigest",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tenant-config",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "tenant-isolate",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tenant-meter",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tenant-quota",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tenant-router",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "test",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "text-layout",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "text-shaper",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "texture-sampler",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "thom-class",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "thom-isomorphism",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "threshold-crypt",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "threshold-decomposition",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "thrift-gen",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "thrift_binary",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "throttle_gateway",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "time-chrono",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "time-format",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "time-ntp",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "time-series-db",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "time-tz",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "timeline-blend",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "timeline-ease",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "timeline-keyframe",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "timeline-track",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "timeout-guard",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "tinylfu",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tlb-shootdown",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tls-alpn",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "tls-cert",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "tls-handshake",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "tls-ocsp",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "tls-server",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "tls-session",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "tlsf-alloc",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "tokio",
+      "old_domain": "unknown",
+      "new_domain": "rust-ecosystem"
+    },
+    {
+      "name": "tokio-crackle",
+      "old_domain": "unknown",
+      "new_domain": "rust-ecosystem"
+    },
+    {
+      "name": "tokio-macros",
+      "old_domain": "unknown",
+      "new_domain": "rust-ecosystem"
+    },
+    {
+      "name": "tokio-stream",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "tokio-util",
+      "old_domain": "unknown",
+      "new_domain": "rust-ecosystem"
+    },
+    {
+      "name": "tombstone-merge",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "top-k",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "topo-sonata",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "topological-insulator",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "topological-sort",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "totp-generator",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "trace-context",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "trace-exporter",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "trace-sampler",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "transfer-function",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "trie-map",
+      "old_domain": "unknown",
+      "new_domain": "physics"
+    },
+    {
+      "name": "type-checker",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "udf-loader",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "udf-registry",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "udf-runner",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "udf-sandbox",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "udf-validator",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "udp-socket",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "ultrametric-space",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "uniform-buffer",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "unit-ball",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "universal-bundle",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "unwind-table",
+      "old_domain": "unknown",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "value-numbering",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "van-der-pol",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "van-emde-boas",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "van-kampen",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "vanishing-point",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "vertex-buffer",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "vietoris-rips",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "voronoi-diagram",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "walsh-transform",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "warp-vote-consensus",
+      "old_domain": "unknown",
+      "new_domain": "networking"
+    },
+    {
+      "name": "wasm-debug",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "wasm-interpreter",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "wasm-linker",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "wasm-module",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "wasm-runtime",
+      "old_domain": "unknown",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "wasm-validator",
+      "old_domain": "unknown",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "wasm-verify",
+      "old_domain": "unknown",
+      "new_domain": "testing"
+    },
+    {
+      "name": "wav-reader",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "webtransport",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "weierstrass_approx",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "whitehead-group",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "whitehead-tower",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "wiener-process",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "winding-number",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "winner-take-all",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "witness-topology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "workflow-engine",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "x25519-dh",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "yang-mills",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "young-diagram",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "young-inequality",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "zariski-topology",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "zero-knowledge",
+      "old_domain": "unknown",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "zero-shot-classifier",
+      "old_domain": "unknown",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "zeroclawlabs",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "zeta-function",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "zeta-regularization",
+      "old_domain": "unknown",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "zip-writer",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "zipf-distribution",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "zipkin-collector",
+      "old_domain": "unknown",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "zorn_lemma",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "zscore-filter",
+      "old_domain": "unknown",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "bench-compare",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "bench-runner",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "benches",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "beta-test-alex",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "beta-test-elena",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "beta-test-framework",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "dijkstra-shortest",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "dynamics-bench",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "edge-benchmark",
+      "old_domain": "testing",
+      "new_domain": "networking"
+    },
+    {
+      "name": "foundry-bench",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "fuzz-engine",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "integration-tests",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "mock-server",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "property-test",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "saml-assertion",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "snapshot-test",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "stress-test",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "tauri_bench",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "test-crate",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "test-harness",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "test-mutator",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "test-pattern",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "tests-build",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "tests-integration",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "tokio-test",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "zeroclaw-fuzz",
+      "old_domain": "testing",
+      "new_domain": "testing"
+    },
+    {
+      "name": "ast-builder",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "character-build",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "circuit-breaker",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "cross-compile-checker",
+      "old_domain": "build-infra",
+      "new_domain": "testing"
+    },
+    {
+      "name": "event-sourcing",
+      "old_domain": "build-infra",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "excision-axiom",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "fibonacci-heap",
+      "old_domain": "build-infra",
+      "new_domain": "testing"
+    },
+    {
+      "name": "forgemaster",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gossip-suspicion",
+      "old_domain": "build-infra",
+      "new_domain": "networking"
+    },
+    {
+      "name": "grove-compiler",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "image-builder",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "incident_response",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "merkle-tree-patricia",
+      "old_domain": "build-infra",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "nocilla-orm",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "patricia-trie",
+      "old_domain": "build-infra",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "pipeline-builder",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "plato-flux-compiler",
+      "old_domain": "build-infra",
+      "new_domain": "physics"
+    },
+    {
+      "name": "principal_bundle",
+      "old_domain": "build-infra",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "reproducing-kernel",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "simplicial-complex",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "ssa_builder",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "superinstance-harness",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "universal-coefficient",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "variational_principle",
+      "old_domain": "build-infra",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "wasm-compiler",
+      "old_domain": "build-infra",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "adaptive-inference",
+      "old_domain": "machine-learning",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "bayesian_inference",
+      "old_domain": "machine-learning",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "constraint-dynamics",
+      "old_domain": "machine-learning",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "ferment-constraints",
+      "old_domain": "machine-learning",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "neural-reservoir",
+      "old_domain": "machine-learning",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "normative-inference",
+      "old_domain": "machine-learning",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "type_inference",
+      "old_domain": "machine-learning",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "whitney-embedding",
+      "old_domain": "machine-learning",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "cuda-driver",
+      "old_domain": "gpu-compute",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "cudaclaw",
+      "old_domain": "gpu-compute",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "cudaclaw-bridge",
+      "old_domain": "gpu-compute",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "gpu-annealing",
+      "old_domain": "gpu-compute",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "gpu-bench-lab",
+      "old_domain": "gpu-compute",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "gpu-kernel",
+      "old_domain": "gpu-compute",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "oxide-barrier",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-canary",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-capacity",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-checkpoint",
+      "old_domain": "gpu-compute",
+      "new_domain": "testing"
+    },
+    {
+      "name": "oxide-chunk",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-circuit-breaker",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-compactor",
+      "old_domain": "gpu-compute",
+      "new_domain": "agent-cognition"
+    },
+    {
+      "name": "oxide-compile-cache",
+      "old_domain": "gpu-compute",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "oxide-conservation",
+      "old_domain": "gpu-compute",
+      "new_domain": "conservation-math"
+    },
+    {
+      "name": "oxide-constructs",
+      "old_domain": "gpu-compute",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "oxide-crdt",
+      "old_domain": "gpu-compute",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "oxide-energy-balance",
+      "old_domain": "gpu-compute",
+      "new_domain": "physics"
+    },
+    {
+      "name": "oxide-epoch",
+      "old_domain": "gpu-compute",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "oxide-federation",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-fleet",
+      "old_domain": "gpu-compute",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "oxide-flux-runtime",
+      "old_domain": "gpu-compute",
+      "new_domain": "physics"
+    },
+    {
+      "name": "oxide-gradient",
+      "old_domain": "gpu-compute",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "oxide-health-monitor",
+      "old_domain": "gpu-compute",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "oxide-journal",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-lease-grid",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-loadshed",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-partition",
+      "old_domain": "gpu-compute",
+      "new_domain": "networking"
+    },
+    {
+      "name": "oxide-pipeline",
+      "old_domain": "gpu-compute",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "oxide-raft-log",
+      "old_domain": "gpu-compute",
+      "new_domain": "networking"
+    },
+    {
+      "name": "oxide-ring",
+      "old_domain": "gpu-compute",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "oxide-sandbox",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-slotmap",
+      "old_domain": "gpu-compute",
+      "new_domain": "physics"
+    },
+    {
+      "name": "oxide-tenancy",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-tombstone",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oxide-workflow",
+      "old_domain": "gpu-compute",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "vulkan-driver",
+      "old_domain": "gpu-compute",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "gossip-protocol",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "grpc-client",
+      "old_domain": "networking",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "grpc-frame",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "grpc-health",
+      "old_domain": "networking",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "grpc-interceptor",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "grpc-router",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "grpc-server",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "http-parser",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "http3-core",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "intent-flux-bridge",
+      "old_domain": "networking",
+      "new_domain": "physics"
+    },
+    {
+      "name": "io-uring-bridge",
+      "old_domain": "networking",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "lapce-rpc",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "noether-bridge",
+      "old_domain": "networking",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "paxos-protocol",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "pincher-flux-bridge",
+      "old_domain": "networking",
+      "new_domain": "physics"
+    },
+    {
+      "name": "protobuf-rpc",
+      "old_domain": "networking",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "raft-rpc",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "superinstance-protocol",
+      "old_domain": "networking",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "thrift-protocol",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "uart-bridge",
+      "old_domain": "networking",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "websocket-server",
+      "old_domain": "networking",
+      "new_domain": "networking"
+    },
+    {
+      "name": "account-model",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "avro-codec",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "bch-code",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "bech32-encode",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "bytecode-gen",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "channel-model",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "code-motion",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "codegen-llvm",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "convolutional-code",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "crdt-pnvector",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "dead-code-elim",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "delta-encoder",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "diffusion-model",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "dns-resolver",
+      "old_domain": "mathematics",
+      "new_domain": "networking"
+    },
+    {
+      "name": "eigenvalue-solver",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "euler-characteristic",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "euler-class",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "euler-lagrange",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "expr-bytecode",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "expr-optimize",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "flac-decoder",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "fountain-code",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "fourier-optics",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "fourier-synth",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "frobenius-algebra",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "geohash-encoder",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "godel_number",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "golay-code",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "gradient-descent",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "gradient-fill",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "graphql-resolver",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "grpc-codec",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "haar_wavelet",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hamming-code",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "helmholtz_solver",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "hopf-algebra",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "import-resolver",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "ir-optimizer",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "ising-model",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "ito-calculus",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "jit-vector",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "knapsack-solver",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "ldpc-code",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "lie-algebra",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "local-vector-search",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "merge-resolver",
+      "old_domain": "mathematics",
+      "new_domain": "networking"
+    },
+    {
+      "name": "msgpack-codec",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "ode-solver",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "ogg-decoder",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "op-codec",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "phi-node",
+      "old_domain": "mathematics",
+      "new_domain": "networking"
+    },
+    {
+      "name": "pixel-vector",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "polar-code",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "protobuf-codec",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "quantum-encode",
+      "old_domain": "mathematics",
+      "new_domain": "physics"
+    },
+    {
+      "name": "regex-bytecode",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "regex-optimizer",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "regex-unicode",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "rscode-erasure",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "scope-resolver",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "sparse-matrix",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "spiral-code",
+      "old_domain": "mathematics",
+      "new_domain": "hardware-io"
+    },
+    {
+      "name": "sudoku-solver",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "tensor-autograd",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "tensor-core",
+      "old_domain": "mathematics",
+      "new_domain": "gpu-compute"
+    },
+    {
+      "name": "tensor-decomposition",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "tensor-midi",
+      "old_domain": "mathematics",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "tensor-network",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "tensor-nn",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "tensor-ops",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "tensor-optim",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "todoroff_optimizer",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "turbocode",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "unicode-bidi",
+      "old_domain": "mathematics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "utxo-model",
+      "old_domain": "mathematics",
+      "new_domain": "machine-learning"
+    },
+    {
+      "name": "vandermonde-matrix",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "vector-bundle",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "vector-clock",
+      "old_domain": "mathematics",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "vector-field",
+      "old_domain": "mathematics",
+      "new_domain": "physics"
+    },
+    {
+      "name": "vectorize-slp",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "viterbi-decoder",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "wavelet-transform",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "wavelet-tree",
+      "old_domain": "mathematics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "zlib-decoder",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "zlib-encoder",
+      "old_domain": "mathematics",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "audio-mixer",
+      "old_domain": "music-audio",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "evolvable-signal",
+      "old_domain": "music-audio",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "membrane-signal",
+      "old_domain": "music-audio",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "midi-flux-bridge",
+      "old_domain": "music-audio",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "midi-parser",
+      "old_domain": "music-audio",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "musician-soul",
+      "old_domain": "music-audio",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "musician-soul-v2",
+      "old_domain": "music-audio",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "operator-spectrum",
+      "old_domain": "music-audio",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "plato-music-sync",
+      "old_domain": "music-audio",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "power-spectrum",
+      "old_domain": "music-audio",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "signal-chain",
+      "old_domain": "music-audio",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "inventory-system",
+      "old_domain": "game-engine",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "plato-room-configs",
+      "old_domain": "game-engine",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "quest-system",
+      "old_domain": "game-engine",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "room-cell",
+      "old_domain": "game-engine",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "room-dds-bridge",
+      "old_domain": "game-engine",
+      "new_domain": "fleet-ops"
+    },
+    {
+      "name": "room-topology",
+      "old_domain": "game-engine",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "timeline-player",
+      "old_domain": "game-engine",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "canvas-2d",
+      "old_domain": "ui-terminal",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "clip-quantize",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "clique-complex",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "consul-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "etcd-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "eureka-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "h3-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "jaeger-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "nats-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "networking"
+    },
+    {
+      "name": "pincher-cli",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "pixel-canvas",
+      "old_domain": "ui-terminal",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "prompt-compiler",
+      "old_domain": "ui-terminal",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "quinn-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "raft-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "registry-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "build-infra"
+    },
+    {
+      "name": "rest-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "zookeeper-client",
+      "old_domain": "ui-terminal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "blake3-hash",
+      "old_domain": "cryptography",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "encryption-aes",
+      "old_domain": "cryptography",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "falcon-hash",
+      "old_domain": "cryptography",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hash-cons",
+      "old_domain": "cryptography",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "hashing-sha256",
+      "old_domain": "cryptography",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "lattice-basis",
+      "old_domain": "cryptography",
+      "new_domain": "physics"
+    },
+    {
+      "name": "lattice-cipher",
+      "old_domain": "cryptography",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "lattice-reduction",
+      "old_domain": "cryptography",
+      "new_domain": "physics"
+    },
+    {
+      "name": "lattice-signal",
+      "old_domain": "cryptography",
+      "new_domain": "physics"
+    },
+    {
+      "name": "minhash-signature",
+      "old_domain": "cryptography",
+      "new_domain": "networking"
+    },
+    {
+      "name": "riff-benchmark-hashing",
+      "old_domain": "cryptography",
+      "new_domain": "music-audio"
+    },
+    {
+      "name": "semantic-hash",
+      "old_domain": "cryptography",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "signing-ed25519",
+      "old_domain": "cryptography",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "siphash-fast",
+      "old_domain": "cryptography",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "spatial-hash",
+      "old_domain": "cryptography",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "wyhash",
+      "old_domain": "cryptography",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "scheduler-cfs",
+      "old_domain": "temporal",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "scheduler-cron",
+      "old_domain": "temporal",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "scheduler-edf",
+      "old_domain": "temporal",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "scheduler-lottery",
+      "old_domain": "temporal",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "scheduler-mlfq",
+      "old_domain": "temporal",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "scheduler-round",
+      "old_domain": "temporal",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "t-minus",
+      "old_domain": "temporal",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "t-minus-client",
+      "old_domain": "temporal",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "tminus-dispatcher",
+      "old_domain": "temporal",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "csrf-token",
+      "old_domain": "security",
+      "new_domain": "security"
+    },
+    {
+      "name": "jwt-claims",
+      "old_domain": "security",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "jwt-decoder",
+      "old_domain": "security",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "jwt-encoder",
+      "old_domain": "security",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "jwt-handler",
+      "old_domain": "security",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "oauth2-client",
+      "old_domain": "security",
+      "new_domain": "security"
+    },
+    {
+      "name": "oauth2-token",
+      "old_domain": "security",
+      "new_domain": "security"
+    },
+    {
+      "name": "rate-limiter",
+      "old_domain": "security",
+      "new_domain": "security"
+    },
+    {
+      "name": "rate_limiter_token",
+      "old_domain": "security",
+      "new_domain": "security"
+    },
+    {
+      "name": "token-lexer",
+      "old_domain": "security",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "certificate-parser",
+      "old_domain": "data-processing",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "coff-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "config-json",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "datadog-forwarder",
+      "old_domain": "data-processing",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "dataflow_analysis",
+      "old_domain": "data-processing",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "doc-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "elf-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "expr-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "font-parser",
+      "old_domain": "data-processing",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "graphql-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "macho-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "mime-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "parser-combinator",
+      "old_domain": "data-processing",
+      "new_domain": "networking"
+    },
+    {
+      "name": "pe-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "section-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "thrift-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "time-parser",
+      "old_domain": "data-processing",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "url-parser",
+      "old_domain": "data-processing",
+      "new_domain": "data-processing"
+    },
+    {
+      "name": "x509-parser",
+      "old_domain": "data-processing",
+      "new_domain": "cryptography"
+    },
+    {
+      "name": "aabb-collision",
+      "old_domain": "physics",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "fluid-sim",
+      "old_domain": "physics",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "particle-system",
+      "old_domain": "physics",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "spring-physics",
+      "old_domain": "physics",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "pattern-binaryheap-trait-bounds",
+      "old_domain": "build_pattern",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "pattern-borrow-checker",
+      "old_domain": "build_pattern",
+      "new_domain": "testing"
+    },
+    {
+      "name": "pattern-cargo-check-timeout",
+      "old_domain": "build_pattern",
+      "new_domain": "temporal"
+    },
+    {
+      "name": "pattern-condvar-consume-guard",
+      "old_domain": "build_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-edition-2024-format",
+      "old_domain": "build_pattern",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "pattern-fresh-scaffold-success",
+      "old_domain": "build_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-graphql-if-let-removal",
+      "old_domain": "build_pattern",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "pattern-manifest-parse",
+      "old_domain": "build_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-method-not-found",
+      "old_domain": "build_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-missing-atomics-import",
+      "old_domain": "build_pattern",
+      "new_domain": "networking"
+    },
+    {
+      "name": "pattern-private-field-access",
+      "old_domain": "build_pattern",
+      "new_domain": "physics"
+    },
+    {
+      "name": "pattern-split-mutable-borrow",
+      "old_domain": "build_pattern",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "pattern-unresolved-import",
+      "old_domain": "build_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-unused-warnings-cosmetic",
+      "old_domain": "build_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-workspace-complexity",
+      "old_domain": "build_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-empty-librs",
+      "old_domain": "quality_pattern",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-ecosystem-scale",
+      "old_domain": "metric",
+      "new_domain": "game-engine"
+    },
+    {
+      "name": "pattern-high-pass-rate",
+      "old_domain": "metric",
+      "new_domain": "unknown"
+    },
+    {
+      "name": "pattern-rate-limit-429",
+      "old_domain": "publish_pattern",
+      "new_domain": "security"
+    },
+    {
+      "name": "pattern-harness-gamma-overcorrection",
+      "old_domain": "harness_pattern",
+      "new_domain": "testing"
+    },
+    {
+      "name": "pattern-harness-quality-inversion",
+      "old_domain": "harness_pattern",
+      "new_domain": "testing"
+    },
+    {
+      "name": "pattern-stress-test-regime",
+      "old_domain": "harness_pattern",
+      "new_domain": "testing"
+    },
+    {
+      "name": "pattern-vector-search-reference",
+      "old_domain": "development_pattern",
+      "new_domain": "mathematics"
+    },
+    {
+      "name": "pattern-typical-wave-output",
+      "old_domain": "productivity_pattern",
+      "new_domain": "ui-terminal"
+    },
+    {
+      "name": "pattern-cache-control-api",
+      "old_domain": "infrastructure_pattern",
+      "new_domain": "mathematics"
+    }
+  ]
+}

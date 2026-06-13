@@ -519,6 +519,312 @@ async function handleEmbed(request: Request, env: Env): Promise<Response> {
   });
 }
 
+// ─── OpenAPI Spec ─────────────────────────────────────────────────────────
+
+const OPENAPI_YAML = `openapi: 3.1.0
+info:
+  title: Fleet Vector API
+  description: >
+    Semantic crate intelligence powered by Cloudflare Workers AI and Vectorize.
+    Provides vector-based search, similarity, recommendations, gap analysis,
+    and dashboard aggregation for the Fleet crate registry.
+  version: 1.0.0
+  contact:
+    name: Casey DiGennaro
+    email: casey.digennaro@gmail.com
+
+servers:
+  - url: https://fleet-vector-api.casey-digennaro.workers.dev
+    description: Production
+
+security: []
+
+paths:
+  /search:
+    post:
+      operationId: search
+      summary: Semantic crate search
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [query]
+              properties:
+                query:
+                  type: string
+                topK:
+                  type: integer
+                  default: 10
+      responses:
+        "200":
+          description: Search results
+        "400":
+          description: Missing or invalid query
+
+  /similar:
+    post:
+      operationId: similar
+      summary: Find similar crates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                crate_name:
+                  type: string
+                name:
+                  type: string
+                id:
+                  type: string
+                topK:
+                  type: integer
+                  default: 10
+      responses:
+        "200":
+          description: Similar crates found
+        "404":
+          description: Crate not found
+
+  /recommend:
+    post:
+      operationId: recommend
+      summary: Context-aware crate recommendations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [context]
+              properties:
+                context:
+                  type: string
+                topK:
+                  type: integer
+                  default: 5
+      responses:
+        "200":
+          description: Recommendations with reasoning
+
+  /gap-analysis:
+    post:
+      operationId: gapAnalysis
+      summary: Identify underdeveloped crates
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                domain:
+                  type: string
+      responses:
+        "200":
+          description: Gap analysis results
+
+  /ingest:
+    post:
+      operationId: ingest
+      summary: Ingest crates into the vector index
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - \$ref: "#/components/schemas/CrateInput"
+                - type: object
+                  properties:
+                    crates:
+                      type: array
+                      items:
+                        \$ref: "#/components/schemas/CrateInput"
+                - type: array
+                  items:
+                    \$ref: "#/components/schemas/CrateInput"
+      responses:
+        "200":
+          description: Crates ingested successfully
+        "401":
+          description: Missing or invalid Bearer token
+
+  /stats:
+    get:
+      operationId: getStats
+      summary: Index statistics
+      responses:
+        "200":
+          description: Index statistics
+
+  /clusters:
+    get:
+      operationId: getClusters
+      summary: Domain clusters with cross-domain similarity
+      responses:
+        "200":
+          description: Domain clusters
+
+  /dashboard:
+    get:
+      operationId: getDashboard
+      summary: Dashboard summary
+      responses:
+        "200":
+          description: Dashboard data
+
+  /crates/{name}:
+    get:
+      operationId: getCrate
+      summary: Get crate metadata
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Crate metadata
+        "404":
+          description: Crate not found
+
+  /openapi.json:
+    get:
+      operationId: getOpenApiJson
+      summary: OpenAPI specification (JSON)
+      responses:
+        "200":
+          description: OpenAPI spec as JSON
+
+  /openapi.yaml:
+    get:
+      operationId: getOpenApiYaml
+      summary: OpenAPI specification (YAML)
+      responses:
+        "200":
+          description: OpenAPI spec as YAML
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    CrateInput:
+      type: object
+      required: [name, description, readme]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        readme:
+          type: string
+        version:
+          type: string
+        domain:
+          type: string
+        wave:
+          type: integer
+        tests:
+          type: integer
+        loc:
+          type: integer
+        github_url:
+          type: string
+        keywords:
+          type: array
+          items:
+            type: string
+`;
+
+/** Minimal YAML→JSON parser sufficient for the OpenAPI spec above */
+function yamlToJson(yaml: string): unknown {
+  const lines = yaml.split('\n');
+  const root: any = {};
+  const stack: Array<{ obj: any; indent: number; key?: string }> = [{ obj: root, indent: -1 }];
+
+  for (const rawLine of lines) {
+    const line = rawLine.replace(/\t/g, '  ');
+    if (line.trim() === '' || line.trim().startsWith('#')) continue;
+    const indent = line.search(/\S/);
+    const content = line.trim();
+
+    // Pop stack to find parent
+    while (stack.length > 1 && stack[stack.length - 1].indent >= indent) stack.pop();
+    const parent = stack[stack.length - 1];
+
+    // List item
+    if (content.startsWith('- ')) {
+      const val = content.slice(2).trim();
+      const arr = parent.key ? (parent.obj[parent.key] ??= []) : parent.obj;
+      const parsed = parseYamlValue(val);
+      if (typeof parsed === 'string' && parsed.includes(': ')) {
+        // Inline map inside list
+        const map: any = {};
+        const [k, ...rest] = parsed.split(': ');
+        map[k.trim()] = rest.join(': ').replace(/^['"]|['"]$/g, '');
+        (arr as any[]).push(map);
+        stack.push({ obj: map, indent: indent + 2 });
+      } else {
+        (arr as any[]).push(parsed);
+      }
+      continue;
+    }
+
+    // Key: value
+    const colonIdx = content.indexOf(':');
+    if (colonIdx === -1) continue;
+    const key = content.slice(0, colonIdx).trim();
+    let value = content.slice(colonIdx + 1).trim();
+
+    if (!value || value === '|' || value === '>') {
+      // New object or block scalar — treat as empty object for our spec
+      const child: any = {};
+      if (Array.isArray(parent.obj)) {
+        const last = parent.obj[parent.obj.length - 1];
+        if (last && typeof last === 'object') { last[key] = child; }
+      } else {
+        parent.obj[key] = child;
+      }
+      stack.push({ obj: child, indent, key });
+    } else {
+      const parsed = parseYamlValue(value);
+      if (Array.isArray(parent.obj)) {
+        const last = parent.obj[parent.obj.length - 1];
+        if (last && typeof last === 'object') last[key] = parsed;
+      } else {
+        parent.obj[key] = parsed;
+      }
+    }
+  }
+  return root;
+}
+
+function parseYamlValue(val: string): unknown {
+  if (val === 'true') return true;
+  if (val === 'false') return false;
+  if (val === 'null' || val === '~') return null;
+  if (/^-?\d+$/.test(val)) return parseInt(val, 10);
+  if (/^-?(\d+\.\d*|\.\d+)$/.test(val)) return parseFloat(val);
+  if (/^\[.*\]$/.test(val)) {
+    try { return JSON.parse(val); } catch { /* fall through */ }
+  }
+  // Strip surrounding quotes
+  if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+    return val.slice(1, -1);
+  }
+  // Handle \$ref style escaped dollar signs
+  return val.replace(/\\\$/g, '$');
+}
+
 // ─── Router ────────────────────────────────────────────────────────────────
 
 export default {
@@ -554,6 +860,33 @@ export default {
 
       const m = path.match(/^\/crates\/(.+)$/);
       if (m && request.method === 'GET') return await handleGetCrate(m[1], env);
+
+      // GET /docs — API documentation HTML (served from META_KV or redirect)
+      if (path === '/docs' || path === '/docs/') {
+        const docsHtml = await env.META_KV.get('docs:api-html');
+        if (docsHtml) {
+          return new Response(docsHtml, {
+            headers: {
+              'Content-Type': 'text/html; charset=utf-8',
+              'Cache-Control': 'public, max-age=3600',
+              ...corsHeaders,
+            },
+          });
+        }
+        // Fallback: redirect to GitHub Pages / raw
+        return Response.redirect('https://superinstance.ai/docs/fleet-vector-api/', 301);
+      }
+
+      if (path === '/openapi.json' && request.method === 'GET') {
+        return new Response(JSON.stringify(yamlToJson(OPENAPI_YAML), null, 2), {
+          headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' },
+        });
+      }
+      if (path === '/openapi.yaml' && request.method === 'GET') {
+        return new Response(OPENAPI_YAML, {
+          headers: { 'Content-Type': 'text/yaml; charset=utf-8', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' },
+        });
+      }
 
       if (path === '/health') return json({
         status: 'ok', service: 'fleet-vector-api',

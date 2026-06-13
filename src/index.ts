@@ -898,7 +898,7 @@ export default {
         `Fleet Vector API\nSemantic crate intelligence via Workers AI + Vectorize\n\n` +
         `POST /ingest   POST /search   POST /similar   POST /recommend\n` +
         `POST /gap-analysis   GET /crates/:name   GET /stats   GET /clusters\n` +
-        `GET /dashboard\n`,
+        `GET /dashboard   GET /docs\n`,
         { headers: { 'Content-Type': 'text/plain' } },
       );
 

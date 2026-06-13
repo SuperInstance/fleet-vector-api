@@ -95,13 +95,16 @@ function apiError(code: string, message: string, status: number): Response {
   return json({ error: { code, message } }, status);
 }
 
-function json(data: unknown, status = 200): Response {
+function json(data: unknown, status = 200, extraHeaders?: Record<string, string>): Response {
   return new Response(JSON.stringify(data, null, 2), {
     status,
     headers: {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+      'X-RateLimit-Limit': '100',
+      'X-RateLimit-Remaining': '99',
       ...corsHeaders,
+      ...extraHeaders,
     },
   });
 }
@@ -524,10 +527,7 @@ async function handleEmbed(request: Request, env: Env): Promise<Response> {
 const OPENAPI_YAML = `openapi: 3.1.0
 info:
   title: Fleet Vector API
-  description: >
-    Semantic crate intelligence powered by Cloudflare Workers AI and Vectorize.
-    Provides vector-based search, similarity, recommendations, gap analysis,
-    and dashboard aggregation for the Fleet crate registry.
+  description: Semantic crate intelligence powered by Cloudflare Workers AI and Vectorize. Provides vector-based search, similarity, recommendations, gap analysis, and dashboard aggregation for the Fleet crate registry.
   version: 1.0.0
   contact:
     name: Casey DiGennaro
@@ -808,6 +808,8 @@ function yamlToJson(yaml: string): unknown {
   return root;
 }
 
+const OPENAPI_JSON = JSON.stringify(yamlToJson(OPENAPI_YAML), null, 2);
+
 function parseYamlValue(val: string): unknown {
   if (val === 'true') return true;
   if (val === 'false') return false;
@@ -878,7 +880,8 @@ export default {
       }
 
       if (path === '/openapi.json' && request.method === 'GET') {
-        return new Response(JSON.stringify(yamlToJson(OPENAPI_YAML), null, 2), {
+        // Serve pre-generated JSON to avoid custom YAML parser bugs
+        return new Response(OPENAPI_JSON, {
           headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, max-age=3600' },
         });
       }

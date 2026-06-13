@@ -1,0 +1,337 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Fleet Vector API",
+    "description": "Semantic crate intelligence powered by Cloudflare Workers AI and Vectorize. Provides vector-based search, similarity, recommendations, gap analysis, and dashboard aggregation for the Fleet crate registry.\n",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Casey DiGennaro",
+      "email": "casey.digennaro@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://fleet-vector-api.casey-digennaro.workers.dev",
+      "description": "Production"
+    }
+  ],
+  "security": [],
+  "paths": {
+    "/search": {
+      "post": {
+        "operationId": "search",
+        "summary": "Semantic crate search",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "query"
+                ],
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  },
+                  "topK": {
+                    "type": "integer",
+                    "default": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Search results"
+          },
+          "400": {
+            "description": "Missing or invalid query"
+          }
+        }
+      }
+    },
+    "/similar": {
+      "post": {
+        "operationId": "similar",
+        "summary": "Find similar crates",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "crate_name": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "topK": {
+                    "type": "integer",
+                    "default": 10
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Similar crates found"
+          },
+          "404": {
+            "description": "Crate not found"
+          }
+        }
+      }
+    },
+    "/recommend": {
+      "post": {
+        "operationId": "recommend",
+        "summary": "Context-aware crate recommendations",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "context"
+                ],
+                "properties": {
+                  "context": {
+                    "type": "string"
+                  },
+                  "topK": {
+                    "type": "integer",
+                    "default": 5
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Recommendations with reasoning"
+          }
+        }
+      }
+    },
+    "/gap-analysis": {
+      "post": {
+        "operationId": "gapAnalysis",
+        "summary": "Identify underdeveloped crates",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "domain": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Gap analysis results"
+          }
+        }
+      }
+    },
+    "/ingest": {
+      "post": {
+        "operationId": "ingest",
+        "summary": "Ingest crates into the vector index",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "oneOf": [
+                  {
+                    "\\$ref": "#/components/schemas/CrateInput"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "crates": {
+                        "type": "array",
+                        "items": {
+                          "\\$ref": "#/components/schemas/CrateInput"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "\\$ref": "#/components/schemas/CrateInput"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Crates ingested successfully"
+          },
+          "401": {
+            "description": "Missing or invalid Bearer token"
+          }
+        }
+      }
+    },
+    "/stats": {
+      "get": {
+        "operationId": "getStats",
+        "summary": "Index statistics",
+        "responses": {
+          "200": {
+            "description": "Index statistics"
+          }
+        }
+      }
+    },
+    "/clusters": {
+      "get": {
+        "operationId": "getClusters",
+        "summary": "Domain clusters with cross-domain similarity",
+        "responses": {
+          "200": {
+            "description": "Domain clusters"
+          }
+        }
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "operationId": "getDashboard",
+        "summary": "Dashboard summary",
+        "responses": {
+          "200": {
+            "description": "Dashboard data"
+          }
+        }
+      }
+    },
+    "/crates/{name}": {
+      "get": {
+        "operationId": "getCrate",
+        "summary": "Get crate metadata",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Crate metadata"
+          },
+          "404": {
+            "description": "Crate not found"
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "operationId": "getOpenApiJson",
+        "summary": "OpenAPI specification (JSON)",
+        "responses": {
+          "200": {
+            "description": "OpenAPI spec as JSON"
+          }
+        }
+      }
+    },
+    "/openapi.yaml": {
+      "get": {
+        "operationId": "getOpenApiYaml",
+        "summary": "OpenAPI specification (YAML)",
+        "responses": {
+          "200": {
+            "description": "OpenAPI spec as YAML"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {
+      "CrateInput": {
+        "type": "object",
+        "required": [
+          "name",
+          "description",
+          "readme"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "readme": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "wave": {
+            "type": "integer"
+          },
+          "tests": {
+            "type": "integer"
+          },
+          "loc": {
+            "type": "integer"
+          },
+          "github_url": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

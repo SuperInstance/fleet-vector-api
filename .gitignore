@@ -1,10 +1,6 @@
 /target
 **/*.rs.bk
-Cargo.lock
-*.swp
-*.swo
-*~
+*.pdb
 .env
-.env.*
-.wrangler/
-node_modules/
+*.secret
+credentials.*

@@ -6,3 +6,5 @@ Cargo.lock
 *~
 .env
 .env.*
+.wrangler/
+node_modules/
